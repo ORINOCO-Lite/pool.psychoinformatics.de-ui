@@ -1,0 +1,3 @@
+[submodule "shacl-vue"]
+	path = shacl-vue
+	url = https://github.com/psychoinformatics-de/shacl-vue.git
