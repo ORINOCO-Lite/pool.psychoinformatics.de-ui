@@ -1,0 +1,33 @@
+name: Deploy on webserver
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    if: github.repository == 'www/pool.psychoinformatics.de-ui'
+    name: Build site and deploy
+    runs-on: site-deploy
+    container:
+      volumes:
+        # for depositing the built site directly
+        - /home/www/srv:/www:rw
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Build
+        run: make install build
+
+      - name: Package
+        run: |
+          # we need to have the editor served from a `ui/` path
+          mkdir deploy
+          mv dist deploy/ui
+
+      - name: Deploy
+        run: cp -r deploy /www/pool.psychoinformatics.de-new && (test -d && mv /www/pool.psychoinformatics.de /www/pool.psychoinformatics.de-old || true); mv /www/pool.psychoinformatics.de-new /www/pool.psychoinformatics.de; rm -rf /www/pool.psychoinformatics.de-old

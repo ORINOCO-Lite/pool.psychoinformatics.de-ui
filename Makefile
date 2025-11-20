@@ -22,7 +22,4 @@ build: clean
 clean:
 	rm -rf $(DIST_DIR)
 
-deploy: dist install build
-	rsync -rvz --delete $</ loki.psychoinformatics.de:/var/www/pool.psychoinformatics.de/www/ui/
-
 .PHONY: install build clean deploy
