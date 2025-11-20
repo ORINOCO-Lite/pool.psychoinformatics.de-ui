@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    if: github.repository == 'www/pool.psychoinformatics.de-ui'
+    if: forgejo.repository == 'www/pool.psychoinformatics.de-ui'
     name: Build site and deploy
     runs-on: site-deploy
     container:
