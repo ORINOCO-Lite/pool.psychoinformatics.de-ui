@@ -2,15 +2,15 @@
     "app_name": "PsyInf Knowledge Pooling Tool",
     "page_title": "PsyInf Knowledge",
     "documentation_url": "",
-    "source_code_url": "https://hub.psychoinformatics.de/datalink/pool.psychoinformatics.de-ui",
+    "source_code_url": "https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui",
     "app_theme": {
         "link_color": "#ffa200",
         "hover_color": "#ffa200",
         "active_color": "#ffa201",
         "visited_color": "#ffa201",
         "panel_color": "#333333",
-        "logo": "datalad_logo.svg"
-    },
+        "logo": "logo.png"
+    },   
     "shapes_url": "https://concepts.datalad.org/s/demo-rse-group/unreleased.shacl.ttl",
     "use_default_shapes": false,
     "data_url": "",
@@ -91,12 +91,30 @@
     "editor_selection": {
         "sh:datatype": {
             "xyzra:flexdate": "W3CISO8601YearMonthEditor"
+        },
+        "shaclvue:gitAnnexUpload": {
+            "true": "InstancesUploadEditor"
         }
     },
-    "editor_config": {
+    "component_config": {
         "W3CISO8601YearMonthEditor": {
             "yearStart": 1990,
             "yearEnd": 2028
+        },
+        "W3CISO8601DateTimeEditor": {
+            "yearStart": 1990,
+            "yearEnd": 2028
+        },
+        "InstancesUploadEditor": {
+            "xyzra:XYZDocument": {
+                "pid_template": "psyinfdoc:{_randomUUID}",
+                "ttl_template": "content:DocumentUploadTemplate"
+            }
+        }
+    },
+    "content": {
+        "DocumentUploadTemplate": {
+            "url": "DocumentUploadTemplate.ttl"
         }
     },
     "class_name_display": "name",
@@ -146,15 +164,30 @@
     },
     "service_fetch_before": {
         "get-record": [],
-        "get-records": []
+        "get-records": [
+            "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole",
+            "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPerson"
+        ]
     },
-    "prefixes": {},
+    "use_gitannex_p2phttp": true,
+    "gitannex_p2phttp_config": {
+        "base_url": "https://hub.edu.datalad.org/git-annex-p2phttp/git-annex",
+        "annex_uuid": "966d1459-89e6-4eba-b777-33b31c664d66",
+        "client_uuid": "shacl-vue"
+    },
+    "prefixes": {
+        "psyinf": "https://psychoinformatics.de/ns/",
+        "psyinfroot": "https://psychoinformatics.de/",
+        "psyinfdoc": "https://psychoinformatics.de/ns/documents/",
+        "shaclvue": "https://concepts.datalad.org/ns/shaclvue/"
+    },
     "footer_links": [
     ],
     "class_icons": {
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAccolade": "mdi-medal",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole": "mdi-function",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType": "mdi-newspaper",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetition": "mdi-podium-gold",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept": "mdi-shape-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention": "mdi-script-text-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataItem": "mdi-file-document-outline",
