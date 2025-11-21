@@ -17,6 +17,7 @@ build: clean
 	cp config.json $(DIST_DIR)/config.json
 	cp favicon.ico $(DIST_DIR)/favicon.ico
 	cp *logo* $(DIST_DIR)/
+	cp templates/* $(DIST_DIR)/
 
 # Clean output
 clean:
