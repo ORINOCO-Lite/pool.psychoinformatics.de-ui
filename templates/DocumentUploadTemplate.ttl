@@ -14,7 +14,7 @@
 
 {pid} a xyzra:XYZDocument;
     dlcommonmx:title "{name}".
-dldi:{annexKey} a xyzra:TRR379Distribution;
+dldi:{annexKey} a dlflatfiles:Distribution;
     dlfilesmx:distribution_of {pid};
     dlfilesmx:byte_size "{size}"^^xsd:nonNegativeInteger;
     dlthings:characterized_by _:n0-1.
