@@ -86,6 +86,7 @@
     ],
     "allow_copy_record_urls": true,
     "allow_edit_instances": [
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPersonAttribution"
     ],
     "editor_selection": {
@@ -125,6 +126,7 @@
         "xyzra:XYZDataset": "{dlcommonmx:title}",
         "xyzra:XYZGenesis": "{dlcommonmx:name}",
         "xyzra:XYZGrant": "{dlcommonmx:title}",
+        "xyzra:XYZInfluence": "{rdf:object} ({xyzra:roles})",
         "xyzra:XYZInstrument": "{dlcommonmx:name}",
         "xyzra:XYZNamedDistributionPart": "{dlspatialmx:locator}",
         "xyzra:XYZObjective": "{dlcommonmx:title}",
@@ -199,6 +201,7 @@
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocument": "mdi-file-document-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGenesis": "mdi-creation",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGrant": "mdi-cash-100",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence": "mdi-arrow-decision",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrument": "mdi-microscope",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrumentType": "mdi-beaker-question-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZNamedDistributionPart": "mdi-folder-text-outline",
@@ -215,6 +218,10 @@
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZSubjectType": "mdi-tag-search",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic": "mdi-book-information-variant",
         "https://concepts.datalad.org/s/identifiers/unreleased/Checksum": "mdi-file-check-outline",
-        "https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier": "mdi-identifier"
+        "https://concepts.datalad.org/s/identifiers/unreleased/Identifier": "mdi-identifier",
+        "https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier": "mdi-identifier",
+        "https://concepts.datalad.org/s/things/v1/Annotation": "mdi-tag-outline",
+        "https://concepts.datalad.org/s/things/v1/Statement": "mdi-comment-text-outline"
+
     }
 }
