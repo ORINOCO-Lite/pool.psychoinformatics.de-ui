@@ -80,12 +80,12 @@
     "hide_classes": [],
     "hide_classes_with_prefix": [],
     "no_edit_classes": [
-        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType",
-        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionPartType",
-        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionType"
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType"
     ],
     "allow_copy_record_urls": true,
     "allow_edit_instances": [
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocumentExchange",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPersonAttribution"
     ],
@@ -122,16 +122,19 @@
     "display_name_autogenerate": {
         "dlidentifiers:Checksum": "{dlidentifiers:creator}:{dlidentifiers:notation}",
         "xyzra:XYZAccolade": "{dlcommonmx:title}",
+        "xyzra:XYZCommunication": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZConvention": "{dlcommonmx:short_name}",
         "xyzra:XYZDataset": "{dlcommonmx:title}",
+        "xyzra:XYZDocument": "{dlcommonmx:title}",
+        "xyzra:XYZDocumentExchange": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZGenesis": "{dlcommonmx:name}",
         "xyzra:XYZGrant": "{dlcommonmx:title}",
-        "xyzra:XYZInfluence": "{rdf:object} ({xyzra:roles})",
+        "xyzra:XYZInfluence": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZInstrument": "{dlcommonmx:name}",
         "xyzra:XYZNamedDistributionPart": "{dlspatialmx:locator}",
         "xyzra:XYZObjective": "{dlcommonmx:title}",
         "xyzra:XYZPerson": "{dlsocialmx:family_name}, {dlsocialmx:given_name}",
-        "xyzra:XYZPersonAttribution": "{rdf:object} ({xyzra:roles})",
+        "xyzra:XYZPersonAttribution": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZProject": "{dlcommonmx:title}",
         "xyzra:XYZPublication": "{dlcommonmx:title}",
         "xyzra:XYZPublicationVenue": "{dlcommonmx:title}",
@@ -189,6 +192,7 @@
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAccolade": "mdi-medal",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole": "mdi-function",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType": "mdi-newspaper",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication": "mdi-message-text-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetition": "mdi-podium-gold",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept": "mdi-shape-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention": "mdi-script-text-outline",
@@ -199,6 +203,7 @@
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionPartType": "mdi-folder-file-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionType": "mdi-folder-table-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocument": "mdi-file-document-outline",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocumentExchange": "mdi-file-arrow-up-down-outline",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGenesis": "mdi-creation",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGrant": "mdi-cash-100",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence": "mdi-arrow-decision",
@@ -220,8 +225,12 @@
         "https://concepts.datalad.org/s/identifiers/unreleased/Checksum": "mdi-file-check-outline",
         "https://concepts.datalad.org/s/identifiers/unreleased/Identifier": "mdi-identifier",
         "https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier": "mdi-identifier",
+        "https://concepts.datalad.org/s/prov-mixin/unreleased/Association": "mdi-account-switch",
+        "https://concepts.datalad.org/s/prov-mixin/unreleased/Communication": "mdi-message-text-outline",
+        "https://concepts.datalad.org/s/prov-mixin/unreleased/End": "mdi-clock-end",
+        "https://concepts.datalad.org/s/prov-mixin/unreleased/Start": "mdi-clock-start",
+        "https://concepts.datalad.org/s/prov-mixin/unreleased/Usage": "mdi-format-list-checks",
         "https://concepts.datalad.org/s/things/v1/Annotation": "mdi-tag-outline",
         "https://concepts.datalad.org/s/things/v1/Statement": "mdi-comment-text-outline"
-
     }
 }
