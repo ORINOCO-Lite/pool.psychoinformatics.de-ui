@@ -80,6 +80,7 @@
     "hide_classes": [],
     "hide_classes_with_prefix": [],
     "no_edit_classes": [
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole",
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType"
     ],
     "allow_copy_record_urls": true,
@@ -121,6 +122,10 @@
     "class_name_display": "name",
     "display_name_autogenerate": {
         "dlidentifiers:Checksum": "{dlidentifiers:creator}:{dlidentifiers:notation}",
+        "dlprovmx:End": "{dltemporalmx:at_time}",
+        "dlprovmx:Start": "{dltemporalmx:at_time}",
+        "dlprovmx:Usage": "{rdf:object} ({dlrelationsmx:roles})",
+        "dlprovmx:Association": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZAccolade": "{dlcommonmx:title}",
         "xyzra:XYZCommunication": "{rdf:object} ({dlrelationsmx:roles})",
         "xyzra:XYZConvention": "{dlcommonmx:short_name}",
