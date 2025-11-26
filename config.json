@@ -92,7 +92,7 @@
     ],
     "editor_selection": {
         "sh:datatype": {
-            "xyzra:flexdate": "W3CISO8601YearMonthEditor"
+            "w3ctr:NOTE-datetime": "W3CISO8601DatePickerEditor"
         },
         "shaclvue:gitAnnexUpload": {
             "true": "InstancesUploadEditor"
