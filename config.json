@@ -77,7 +77,11 @@
     "show_classes_with_prefix": [
         "xyzra"
     ],
-    "hide_classes": [],
+    "hide_classes": [
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention",
+        "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZRule"
+    ],
     "hide_classes_with_prefix": [],
     "no_edit_classes": [
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole",
