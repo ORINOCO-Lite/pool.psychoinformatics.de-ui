@@ -113,6 +113,15 @@
                 "pid_template": "psyinfdoc:{_randomUUID}",
                 "ttl_template": "content:DocumentUploadTemplate"
             }
+        },
+        "InstancesSelectEditor": {
+            "fetchingsRecordsText": "Fetching records...",
+            "dlidentifiers:Identifier": {
+                "show_classes": [],
+                "show_classes_with_prefix": ["dlidentifiers"],
+                "hide_classes": [],
+                "hide_classes_with_prefix": []
+            }
         }
     },
     "content": {
