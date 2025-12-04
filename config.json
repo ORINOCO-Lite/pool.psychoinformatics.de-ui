@@ -74,7 +74,7 @@
     "show_all_fields": false,
     "show_classes": [],
     "show_classes_with_prefix": [
-        "xyzra"
+        "xyzrse"
     ],
     "hide_classes": [
         "https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept",
@@ -95,7 +95,7 @@
     ],
     "editor_selection": {
         "sh:datatype": {
-            "xyzra:flexdate": "W3CISO8601DatePickerEditor",
+            "xyzrse:flexdate": "W3CISO8601DatePickerEditor",
             "w3ctr:NOTE-datetime": "W3CISO8601DatePickerEditor"
         },
         "shaclvue:gitAnnexUpload": {
@@ -112,7 +112,7 @@
             "yearEnd": 2028
         },
         "InstancesUploadEditor": {
-            "xyzra:XYZDocument": {
+            "xyzrse:XYZDocument": {
                 "pid_template": "psyinfdoc:{_randomUUID}",
                 "ttl_template": "content:DocumentUploadTemplate"
             }
@@ -139,29 +139,29 @@
         "dlprovmx:Start": "{dltemporalmx:at_time}",
         "dlprovmx:Usage": "{rdf:object} ({dlrelationsmx:roles})",
         "dlprovmx:Association": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZAccolade": "{dlcommonmx:title}",
-        "xyzra:XYZAssociation": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZCommunication": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZConvention": "{dlcommonmx:short_name}",
-        "xyzra:XYZDataset": "{dlcommonmx:title}",
-        "xyzra:XYZDocument": "{dlcommonmx:title}",
-        "xyzra:XYZDocumentExchange": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZEnd": "{dltemporalmx:at_time}",
-        "xyzra:XYZGenesis": "{dlcommonmx:name}",
-        "xyzra:XYZGrant": "{dlcommonmx:title}",
-        "xyzra:XYZInfluence": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZInstrument": "{dlcommonmx:name}",
-        "xyzra:XYZNamedDistributionPart": "{dlspatialmx:locator}",
-        "xyzra:XYZObjective": "{dlcommonmx:title}",
-        "xyzra:XYZOrganization": "{dlcommonmx:name}",
-        "xyzra:XYZPerson": "{dlsocialmx:family_name}, {dlsocialmx:given_name}",
-        "xyzra:XYZPersonAttribution": "{rdf:object} ({dlrelationsmx:roles})",
-        "xyzra:XYZProject": "{dlcommonmx:title}",
-        "xyzra:XYZPublication": "{dlcommonmx:title}",
-        "xyzra:XYZPublicationVenue": "{dlcommonmx:title}",
-        "xyzra:XYZStart": "{dltemporalmx:at_time}",
-        "xyzra:XYZSubject": "{dlcommonmx:name}",
-        "xyzra:XYZUsage": "{rdf:object} ({dlrelationsmx:roles})"
+        "xyzrse:XYZAccolade": "{dlcommonmx:title}",
+        "xyzrse:XYZAssociation": "{rdf:object} ({dlrelationsmx:roles})",
+        "xyzrse:XYZCommunication": "{rdf:object} ({dlrelationsmx:roles})",
+        "xyzrse:XYZConvention": "{dlcommonmx:short_name}",
+        "xyzrse:XYZDataset": "{dlcommonmx:title}",
+        "xyzrse:XYZDocument": "{dlcommonmx:title}",
+        "xyzrse:XYZDocumentExchange": "{rdf:object} ({dlrelationsmx:roles})",
+        "xyzrse:XYZEnd": "{dltemporalmx:at_time}",
+        "xyzrse:XYZGenesis": "{dlcommonmx:name}",
+        "xyzrse:XYZGrant": "{dlcommonmx:title}",
+        "xyzrse:XYZInfluence": "{rdf:object} ({dlrelationsmx:roles})",
+        "xyzrse:XYZInstrument": "{dlcommonmx:name}",
+        "xyzrse:XYZNamedDistributionPart": "{dlspatialmx:locator}",
+        "xyzrse:XYZObjective": "{dlcommonmx:title}",
+        "xyzrse:XYZOrganization": "{dlcommonmx:name}",
+        "xyzrse:XYZPerson": "{dlsocialmx:family_name}, {dlsocialmx:given_name}",
+        "xyzrse:XYZPersonAttribution": "{rdf:object} ({dlrelationsmx:roles})",
+        "xyzrse:XYZProject": "{dlcommonmx:title}",
+        "xyzrse:XYZPublication": "{dlcommonmx:title}",
+        "xyzrse:XYZPublicationVenue": "{dlcommonmx:title}",
+        "xyzrse:XYZStart": "{dltemporalmx:at_time}",
+        "xyzrse:XYZSubject": "{dlcommonmx:name}",
+        "xyzrse:XYZUsage": "{rdf:object} ({dlrelationsmx:roles})"
     },
     "display_name_autogenerate_placeholder": {
         "default": "?"
