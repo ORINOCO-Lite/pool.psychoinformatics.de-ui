@@ -20,6 +20,15 @@ jobs:
         with:
           submodules: true
 
+      - name: Provision `uv`
+        run: wget -qO- https://astral.sh/uv/install.sh | sh
+
+      - name: Provision `jq`
+        run: wget https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-amd64 -O /usr/local/bin/jq && chmod +x /usr/local/bin/jq
+
+      - name: Provision `yq`
+        run: uv tool install yq
+
       - name: Build
         run: make install build
 
