@@ -17,32 +17,41 @@ class_url: https://concepts.datalad.org/s/demo-rse-group/unreleased.owl.ttl
 use_default_classes: false
 id_iri: https://concepts.datalad.org/s/things/v1/pid
 id_autogenerate:
+  # this uses the namespace `xyzrsens`, because that is defined in the demo
+  # schema we are using right now. Eventually, this should all migrate
+  # to a dedicated schema and to a dedicated "kiste" namespace
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataItem:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: dataitems/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataset:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: datasets/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGenesis:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: processes/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrument:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: instruments/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrumentType:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: instrumenttypes/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZObjective:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: objectives/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZProject:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: projects/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPublication:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: publications/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZStudy:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: studies/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZSubject:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: subjects/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic:
-    id_autogenerate_prefix: psyinf
+    id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: topic/
 id_resolves_externally:
   - bibo
@@ -62,16 +71,17 @@ show_all_fields: false
 show_classes: []
 show_classes_with_prefix:
   - xyzrse
-hide_classes:
-  - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept
-  - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention
-  - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZRule
+hide_classes: []
 hide_classes_with_prefix: []
 no_edit_classes:
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType
 allow_copy_record_urls: true
 allow_edit_instances:
+  - https://concepts.datalad.org/s/identifiers/unreleased/Checksum
+  - https://concepts.datalad.org/s/identifiers/unreleased/ComputedIdentifier
+  - https://concepts.datalad.org/s/identifiers/unreleased/DOI
+  - https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocumentExchange
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence
@@ -99,6 +109,7 @@ component_config:
       show_classes: []
       show_classes_with_prefix:
         - dlidentifiers
+        - xyzrse
       hide_classes: []
       hide_classes_with_prefix: []
 content:
@@ -112,6 +123,7 @@ display_name_autogenerate:
   dlprovmx:Usage: '{rdf:object} ({dlrelationsmx:roles})'
   dlprovmx:Association: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZAccolade: '{dlcommonmx:title}'
+  xyzrse:XYZAgentRole: '{skos:prefLabel}'
   xyzrse:XYZAssociation: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZCommunication: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZConvention: '{dlcommonmx:short_name}'
@@ -176,6 +188,7 @@ class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType: mdi-newspaper
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication: mdi-message-text-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetition: mdi-podium-gold
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetitionType: mdi-podium
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept: mdi-shape-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention: mdi-script-text-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataItem: mdi-file-document-outline
@@ -216,4 +229,5 @@ class_icons:
   https://concepts.datalad.org/s/prov-mixin/unreleased/Start: mdi-clock-start
   https://concepts.datalad.org/s/prov-mixin/unreleased/Usage: mdi-format-list-checks
   https://concepts.datalad.org/s/things/v1/Annotation: mdi-tag-outline
+  https://concepts.datalad.org/s/things/v1/AttributeSpecification: mdi-playlist-check
   https://concepts.datalad.org/s/things/v1/Statement: mdi-comment-text-outline
