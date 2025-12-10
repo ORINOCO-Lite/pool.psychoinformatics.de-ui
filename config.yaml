@@ -19,37 +19,67 @@ id_iri: https://concepts.datalad.org/s/things/v1/pid
 id_autogenerate:
   # this uses the namespace `xyzrsens`, because that is defined in the demo
   # schema we are using right now. Eventually, this should all migrate
-  # to a dedicated schema and to a dedicated "kiste" namespace
-  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataItem:
+  # to a dedicated schema and to a dedicated "psyinf" namespace
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: dataitems/
+    id_autogenerate_prepend: agent-roles/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: bibliographic-types/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetition:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: competitions/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCompetitionType:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: competition-types/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConcept:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: concepts/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZConvention:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: conventions/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataset:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: datasets/
-  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGenesis:
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataType:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: processes/
+    id_autogenerate_prepend: datatypes/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistribution:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: distributions/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocument:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: documents/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZGrant:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: grants/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrument:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: instruments/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInstrumentType:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: instrumenttypes/
+    id_autogenerate_prepend: instrument-types/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZObjective:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: objectives/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZOrganization:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: organizations/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPerson:
+    id_autogenerate_prefix: xyzrsens
+    id_autogenerate_prepend: persons/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZProject:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: projects/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPublication:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: publications/
-  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZStudy:
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPublicationVenue:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: studies/
-  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZSubject:
+    id_autogenerate_prepend: publication-venues/
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZRule:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: subjects/
+    id_autogenerate_prepend: rules/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic:
     id_autogenerate_prefix: xyzrsens
     id_autogenerate_prepend: topic/
