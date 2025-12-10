@@ -14,7 +14,7 @@ install:
 build: clean
 	cd $(VUE_APP_DIR) && npm run build:app
 	mv $(VUE_APP_DIR)/dist/app ./$(DIST_DIR)
-	cp config.json $(DIST_DIR)/config.json
+	yq < config.yaml > $(DIST_DIR)/config.json
 	cp favicon.ico $(DIST_DIR)/favicon.ico
 	cp *logo* $(DIST_DIR)/
 	cp templates/* $(DIST_DIR)/
