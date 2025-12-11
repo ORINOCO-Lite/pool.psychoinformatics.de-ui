@@ -147,10 +147,9 @@ content:
     url: DocumentUploadTemplate.ttl
 class_name_display: name
 display_name_autogenerate:
+  dlidentifiers:Identifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
   dlidentifiers:Checksum: '{dlidentifiers:creator}:{dlidentifiers:notation}'
-  dlidentifiers:ComputedIdentifier: '{dlidentifiers:creator}:{dlidentifiers:notation}'
   dlidentifiers:DOI: 'DOI: {dlidentifiers:notation}'
-  dlidentifiers:IssuedIdentifier: '{dlidentifiers:schema_agency}:{dlidentifiers:notation}'
   xyzrse:ORCID: 'ORCID: {dlidentifiers:notation}'
   dlprovmx:End: '{dltemporalmx:at_time}'
   dlprovmx:Start: '{dltemporalmx:at_time}'
@@ -182,6 +181,8 @@ display_name_autogenerate:
   xyzrse:XYZUsage: '{rdf:object} ({dlrelationsmx:roles})'
 display_name_autogenerate_placeholder:
   default: '?'
+  dlidentifiers:creator: ''
+  dlidentifiers:schema_agency: ''
 use_service: true
 use_token: true
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials.
