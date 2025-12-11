@@ -251,8 +251,11 @@ class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic: mdi-book-information-variant
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZUsage: mdi-format-list-checks
   https://concepts.datalad.org/s/identifiers/unreleased/Checksum: mdi-file-check-outline
+  https://concepts.datalad.org/s/identifiers/unreleased/ComputedIdentifier: mdi-pound-box-outline
+  https://concepts.datalad.org/s/identifiers/unreleased/DOI: mdi-identifier
   https://concepts.datalad.org/s/identifiers/unreleased/Identifier: mdi-identifier
   https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier: mdi-identifier
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/ORCID: mdi-identifier
   https://concepts.datalad.org/s/prov-mixin/unreleased/Association: mdi-account-switch
   https://concepts.datalad.org/s/prov-mixin/unreleased/Communication: mdi-message-text-outline
   https://concepts.datalad.org/s/prov-mixin/unreleased/End: mdi-clock-end
