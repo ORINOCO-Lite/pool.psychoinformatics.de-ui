@@ -148,6 +148,8 @@ content:
 class_name_display: name
 display_name_autogenerate:
   dlidentifiers:Identifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
+  dlidentifiers:IssuedIdentifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
+  dlidentifiers:ComputedIdentifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
   dlidentifiers:Checksum: '{dlidentifiers:creator}:{dlidentifiers:notation}'
   dlidentifiers:DOI: 'DOI: {dlidentifiers:notation}'
   xyzrse:ORCID: 'ORCID: {dlidentifiers:notation}'
