@@ -148,6 +148,10 @@ content:
 class_name_display: name
 display_name_autogenerate:
   dlidentifiers:Checksum: '{dlidentifiers:creator}:{dlidentifiers:notation}'
+  dlidentifiers:ComputedIdentifier: '{dlidentifiers:creator}:{dlidentifiers:notation}'
+  dlidentifiers:DOI: 'DOI: {dlidentifiers:notation}'
+  dlidentifiers:IssuedIdentifier: '{dlidentifiers:schema_agency}:{dlidentifiers:notation}'
+  xyzrse:ORCID: 'ORCID: {dlidentifiers:notation}'
   dlprovmx:End: '{dltemporalmx:at_time}'
   dlprovmx:Start: '{dltemporalmx:at_time}'
   dlprovmx:Usage: '{rdf:object} ({dlrelationsmx:roles})'
