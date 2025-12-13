@@ -104,7 +104,6 @@ show_classes_with_prefix:
 hide_classes: []
 hide_classes_with_prefix: []
 no_edit_classes:
-  - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZBibliographicType
 allow_copy_record_urls: true
 allow_edit_instances:
