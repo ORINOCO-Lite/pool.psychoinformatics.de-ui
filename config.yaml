@@ -158,7 +158,7 @@ display_name_autogenerate:
   dlprovmx:Usage: '{rdf:object} ({dlrelationsmx:roles})'
   dlprovmx:Association: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZAccolade: '{dlcommonmx:title}'
-  xyzrse:XYZAgentRole: '{skos:prefLabel}'
+  xyzrse:XYZAgentRole: '{dlcommonmx:name}'
   xyzrse:XYZAssociation: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZCommunication: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZConvention: '{dlcommonmx:short_name}'
