@@ -231,6 +231,7 @@ class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataItem: mdi-file-document-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataType: mdi-tape-measure
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDataset: mdi-database
+  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDelegation: mdi-badge-account
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistribution: mdi-folder-arrow-right-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionPartType: mdi-folder-file-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDistributionType: mdi-folder-table-outline
