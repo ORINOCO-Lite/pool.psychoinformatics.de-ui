@@ -272,5 +272,8 @@ class_icons:
   https://concepts.datalad.org/s/prov-mixin/unreleased/Usage: mdi-format-list-checks
   https://concepts.datalad.org/s/things/v1/Annotation: mdi-tag-outline
   https://concepts.datalad.org/s/things/v1/AttributeSpecification: mdi-playlist-check
+  https://concepts.datalad.org/s/flat/unreleased/FlatAttributeSpecification: mdi-playlist-check
   https://concepts.datalad.org/s/things/v1/Statement: mdi-comment-text-outline
+  https://concepts.datalad.org/s/flat/unreleased/FlatStatement: mdi-comment-text-outline
   https://concepts.datalad.org/s/things/v1/Property: mdi-contain-start
+  https://concepts.datalad.org/s/flat/unreleased/FlatProperty: mdi-contain-start
