@@ -98,7 +98,8 @@ id_resolves_externally:
   - spdxlic
 show_shapes_wo_id: false
 show_all_fields: false
-show_classes: []
+show_classes:
+  - https://concepts.datalad.org/s/flat/unreleased/FlatProperty
 show_classes_with_prefix:
   - xyzrse
 hide_classes: []
