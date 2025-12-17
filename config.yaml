@@ -115,7 +115,6 @@ allow_edit_instances:
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocumentExchange
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence
-  - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPersonAttribution
 editor_selection:
   sh:datatype:
     xyzrse:flexdate: W3CISO8601DatePickerEditor
@@ -175,7 +174,6 @@ display_name_autogenerate:
   xyzrse:XYZObjective: '{dlcommonmx:title}'
   xyzrse:XYZOrganization: '{dlcommonmx:name}'
   xyzrse:XYZPerson: '{dlsocialmx:family_name}, {dlsocialmx:given_name}'
-  xyzrse:XYZPersonAttribution: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZProject: '{dlcommonmx:title}'
   xyzrse:XYZPublication: '{dlcommonmx:title}'
   xyzrse:XYZPublicationVenue: '{dlcommonmx:title}'
@@ -248,7 +246,6 @@ class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZObjective: mdi-bullseye-arrow
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZOrganization: mdi-account-group
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPerson: mdi-face-man
-  https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPersonAttribution: mdi-clipboard-account-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZProject: mdi-briefcase-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPublication: mdi-newspaper-variant-outline
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPublicationVenue: mdi-office-building-outline
