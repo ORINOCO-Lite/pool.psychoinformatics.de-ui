@@ -95,6 +95,7 @@ id_resolves_externally:
   - orcid
   - ror
   - rrid
+  - sio
   - spdxlic
 show_shapes_wo_id: false
 show_all_fields: false
