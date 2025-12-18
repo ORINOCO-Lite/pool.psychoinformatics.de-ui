@@ -100,6 +100,7 @@ id_resolves_externally:
 show_shapes_wo_id: false
 show_all_fields: false
 show_classes:
+  - https://concepts.datalad.org/s/flat/unreleased/AnnotationTag
   - https://concepts.datalad.org/s/flat/unreleased/FlatProperty
 show_classes_with_prefix:
   - xyzrse
@@ -276,3 +277,4 @@ class_icons:
   https://concepts.datalad.org/s/flat/unreleased/FlatStatement: mdi-comment-text-outline
   https://concepts.datalad.org/s/things/v1/Property: mdi-contain-start
   https://concepts.datalad.org/s/flat/unreleased/FlatProperty: mdi-contain-start
+  https://concepts.datalad.org/s/flat/unreleased/AnnotationTag: mdi-tag-outline
