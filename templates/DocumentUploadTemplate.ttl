@@ -18,7 +18,7 @@
     dlfilesmx:distribution_of <{pid}>;
     dlfilesmx:byte_size "{size}"^^xsd:nonNegativeInteger;
     dlthings:attributes _:n0-1.
-_:n0-1 a dlthings:AttributeSpecification;
+_:n0-1 a dlflat:FlatAttributeSpecification;
     rdf:value "{downloadUrl}"^^xsd:anyURI;
     rdf:predicate dcat:downloadUrl.
 <dldi:{annexKey}> dlflatfiles:checksums _:n0-2.
