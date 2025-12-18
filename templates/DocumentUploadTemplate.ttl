@@ -12,16 +12,16 @@
 @prefix dlfilesmx: <https://concepts.datalad.org/s/files-mixin/unreleased/> .
 @prefix dlcommonmx: <https://concepts.datalad.org/s/common-mixin/unreleased/> .
 
-{pid} a xyzrse:XYZDocument;
+<{pid}> a xyzrse:XYZDocument;
     dlcommonmx:title "{name}".
-dldi:{annexKey} a xyzrse:XYZDistribution;
+<dldi:{annexKey}> a xyzrse:XYZDistribution;
     dlfilesmx:distribution_of {pid};
     dlfilesmx:byte_size "{size}"^^xsd:nonNegativeInteger;
     dlthings:attributes _:n0-1.
 _:n0-1 a dlthings:AttributeSpecification;
     rdf:value "{downloadUrl}"^^xsd:anyURI;
     rdf:predicate dcat:downloadUrl.
-dldi:{annexKey} dlflatfiles:checksums _:n0-2.
+<dldi:{annexKey}> dlflatfiles:checksums _:n0-2.
 _:n0-2 a dlidentifiers:Checksum;
     dlidentifiers:notation "{hash}";
     dlidentifiers:creator "spdx:checksumAlgorithm_sha256"^^xsd:anyURI.
