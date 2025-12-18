@@ -4,6 +4,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dlthings: <https://concepts.datalad.org/s/things/v1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dlflat: <https://concepts.datalad.org/s/flat/unreleased/> .
 @prefix dlflatfiles: <https://concepts.datalad.org/s/flat-files/unreleased/> .
 @prefix dlidentifiers: <https://concepts.datalad.org/s/identifiers/unreleased/> .
 @prefix datalad: <https://pid.datalad.org/datasets/> .
