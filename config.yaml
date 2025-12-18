@@ -132,7 +132,7 @@ component_config:
     yearEnd: 2028
   InstancesUploadEditor:
     xyzrse:XYZDocument:
-      pid_template: psyinfdoc:{_randomUUID}
+      pid_template: datalad:aa2b2132-f3f1-4d62-b245-d9717722897e/uuid/{_randomUUID}
       ttl_template: content:DocumentUploadTemplate
   InstancesSelectEditor:
     fetchingsRecordsText: Fetching records...
@@ -211,13 +211,10 @@ service_fetch_before:
     - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPerson
 use_gitannex_p2phttp: true
 gitannex_p2phttp_config:
-  base_url: https://hub.edu.datalad.org/git-annex-p2phttp/git-annex
-  annex_uuid: 966d1459-89e6-4eba-b777-33b31c664d66
+  base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
+  annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
   client_uuid: shacl-vue
 prefixes:
-  psyinf: https://psychoinformatics.de/ns/
-  psyinfroot: https://psychoinformatics.de/
-  psyinfdoc: https://psychoinformatics.de/ns/documents/
   shaclvue: https://concepts.datalad.org/ns/shaclvue/
 footer_links: []
 class_icons:

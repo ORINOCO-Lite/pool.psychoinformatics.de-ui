@@ -1,27 +1,27 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xyzra: <https://concepts.datalad.org/s/demo-rse-group/unreleased/> .
-@prefix psyinfdoc: <https://psychoinformatics.de/ns/documents/> .
+@prefix xyzrse: <https://concepts.datalad.org/s/demo-rse-group/unreleased/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dlthings: <https://concepts.datalad.org/s/things/v1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dlflatfiles: <https://concepts.datalad.org/s/flat-files/unreleased/> .
 @prefix dlidentifiers: <https://concepts.datalad.org/s/identifiers/unreleased/> .
+@prefix datalad: <https://pid.datalad.org/datasets/> .
 @prefix dldi: <https://pid.datalad.org/distributions/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix dlfilesmx: <https://concepts.datalad.org/s/files-mixin/unreleased/> .
 @prefix dlcommonmx: <https://concepts.datalad.org/s/common-mixin/unreleased/> .
 
-{pid} a xyzra:XYZDocument;
+{pid} a xyzrse:XYZDocument;
     dlcommonmx:title "{name}".
-dldi:{annexKey} a xyzra:XYZDistribution;
+dldi:{annexKey} a xyzrse:XYZDistribution;
     dlfilesmx:distribution_of {pid};
     dlfilesmx:byte_size "{size}"^^xsd:nonNegativeInteger;
-    dlthings:characterized_by _:n0-1.
-_:n0-1 a dlthings:Statement;
-    rdf:object <{downloadUrl}>;
+    dlthings:attributes _:n0-1.
+_:n0-1 a dlthings:AttributeSpecification;
+    rdf:value "{downloadUrl}"^^xsd:anyURI;
     rdf:predicate dcat:downloadUrl.
 dldi:{annexKey} dlflatfiles:checksums _:n0-2.
 _:n0-2 a dlidentifiers:Checksum;
     dlidentifiers:notation "{hash}";
-    dlidentifiers:creator "http://spdx.org/rdf/terms#checksumAlgorithm_sha256"^^xsd:anyURI.
+    dlidentifiers:creator "spdx:checksumAlgorithm_sha256"^^xsd:anyURI.
