@@ -119,8 +119,8 @@ allow_edit_instances:
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence
 editor_selection:
   sh:datatype:
-    xyzrse:flexdate: W3CISO8601DatePickerEditor
-    w3ctr:NOTE-datetime: W3CISO8601DatePickerEditor
+    xyzrse:flexdate: W3CISO8601DateTimeEditor
+    w3ctr:NOTE-datetime: W3CISO8601DateTimeEditor
   shaclvue:gitAnnexUpload:
     'true': InstancesUploadEditor
 component_config:
