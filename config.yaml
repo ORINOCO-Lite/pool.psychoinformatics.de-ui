@@ -1,3 +1,4 @@
+external_config_url: https://hub.psychoinformatics.de/datalink/shacl-vue/raw/commit/8be6701ba6fce8fdb79c8363ba14821e9a0790af/public/config_default.json
 app_name: PsyInf Knowledge Pooling Tool
 page_title: PsyInf Knowledge
 documentation_url: ''
@@ -10,12 +11,8 @@ app_theme:
   panel_color: '#333333'
   logo: logo.png
 shapes_url: https://concepts.datalad.org/s/demo-rse-group/unreleased.shacl.ttl
-use_default_shapes: false
 data_url: ''
-use_default_data: false
 class_url: https://concepts.datalad.org/s/demo-rse-group/unreleased.owl.ttl
-use_default_classes: false
-id_iri: https://concepts.datalad.org/s/things/v1/pid
 id_autogenerate:
   # this uses the namespace `xyzrsens`, because that is defined in the demo
   # schema we are using right now. Eventually, this should all migrate
@@ -117,19 +114,9 @@ allow_edit_instances:
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZCommunication
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZDocumentExchange
   - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZInfluence
-editor_selection:
-  sh:datatype:
-    xyzrse:flexdate: W3CISO8601DateTimeEditor
-    w3ctr:NOTE-datetime: W3CISO8601DateTimeEditor
-  shaclvue:gitAnnexUpload:
-    'true': InstancesUploadEditor
+filter_records_by:
+  -  dlcommonmx:short_name
 component_config:
-  W3CISO8601YearMonthEditor:
-    yearStart: 1990
-    yearEnd: 2028
-  W3CISO8601DateTimeEditor:
-    yearStart: 1990
-    yearEnd: 2028
   InstancesUploadEditor:
     dlthings:Thing:
       pid_template: datalad:aa2b2132-f3f1-4d62-b245-d9717722897e/uuid/{_randomUUID}
@@ -148,18 +135,7 @@ content:
     url: DocumentUploadTemplate.ttl
 class_name_display: name
 display_name_autogenerate:
-  dlthings:Statement: '{rdf:predicate}: {rdf:object}'
-  dlidentifiers:Identifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
-  dlidentifiers:IssuedIdentifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
-  dlidentifiers:ComputedIdentifier: '{dlidentifiers:notation} ({dlidentifiers:schema_agency} {dlidentifiers:creator})'
-  dlidentifiers:Checksum: '{dlidentifiers:creator}:{dlidentifiers:notation}'
-  dlidentifiers:DOI: 'DOI: {dlidentifiers:notation}'
-  dlflat:FlatAttributeSpecification: '{rdf:predicate}: {rdf:value}'
   xyzrse:ORCID: 'ORCID: {dlidentifiers:notation}'
-  dlprovmx:End: '{dltemporalmx:at_time}'
-  dlprovmx:Start: '{dltemporalmx:at_time}'
-  dlprovmx:Usage: '{rdf:object} ({dlrelationsmx:roles})'
-  dlprovmx:Association: '{rdf:object} ({dlrelationsmx:roles})'
   xyzrse:XYZAccolade: '{dlcommonmx:title}'
   xyzrse:XYZAgentRole: '{dlcommonmx:name}'
   xyzrse:XYZAssociation: '{rdf:object} ({dlrelationsmx:roles})'
@@ -183,10 +159,6 @@ display_name_autogenerate:
   xyzrse:XYZStart: '{dltemporalmx:at_time}'
   xyzrse:XYZSubject: '{dlcommonmx:name}'
   xyzrse:XYZUsage: '{rdf:object} ({dlrelationsmx:roles})'
-display_name_autogenerate_placeholder:
-  default: '?'
-  dlidentifiers:creator: ''
-  dlidentifiers:schema_agency: ''
 use_service: true
 use_token: true
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials.
@@ -196,14 +168,6 @@ service_base_url:
     type: write
   - url: https://pool.psychoinformatics.de/api/public/
     type: read
-service_constrained_search:
-  min_characters: 3
-service_endpoints:
-  post-record: record/{name}?format=ttl
-  get-record: record?pid={curie}&format=ttl
-  get-records: records/{name}?format=ttl
-  get-paginated-records: records/p/{name}?format=ttl&size=100&page={page_number}
-  get-paginated-records-constrained: records/p/{name}?format=ttl&matching=%25{match_string}%25&size=100&page={page_number}
 service_fetch_before:
   get-record: []
   get-records:
@@ -214,8 +178,6 @@ gitannex_p2phttp_config:
   base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
   annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
   client_uuid: shacl-vue
-prefixes:
-  shaclvue: https://concepts.datalad.org/ns/shaclvue/
 footer_links: []
 class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAccolade: mdi-medal
@@ -257,22 +219,4 @@ class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZSubjectType: mdi-tag-search
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic: mdi-book-information-variant
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZUsage: mdi-format-list-checks
-  https://concepts.datalad.org/s/identifiers/unreleased/Checksum: mdi-file-check-outline
-  https://concepts.datalad.org/s/identifiers/unreleased/ComputedIdentifier: mdi-pound-box-outline
-  https://concepts.datalad.org/s/identifiers/unreleased/DOI: mdi-identifier
-  https://concepts.datalad.org/s/identifiers/unreleased/Identifier: mdi-identifier
-  https://concepts.datalad.org/s/identifiers/unreleased/IssuedIdentifier: mdi-identifier
   https://concepts.datalad.org/s/demo-rse-group/unreleased/ORCID: mdi-identifier
-  https://concepts.datalad.org/s/prov-mixin/unreleased/Association: mdi-account-switch
-  https://concepts.datalad.org/s/prov-mixin/unreleased/Communication: mdi-message-text-outline
-  https://concepts.datalad.org/s/prov-mixin/unreleased/End: mdi-clock-end
-  https://concepts.datalad.org/s/prov-mixin/unreleased/Start: mdi-clock-start
-  https://concepts.datalad.org/s/prov-mixin/unreleased/Usage: mdi-format-list-checks
-  https://concepts.datalad.org/s/things/v1/Annotation: mdi-tag-outline
-  https://concepts.datalad.org/s/things/v1/AttributeSpecification: mdi-playlist-check
-  https://concepts.datalad.org/s/flat/unreleased/FlatAttributeSpecification: mdi-playlist-check
-  https://concepts.datalad.org/s/things/v1/Statement: mdi-comment-text-outline
-  https://concepts.datalad.org/s/flat/unreleased/FlatStatement: mdi-comment-text-outline
-  https://concepts.datalad.org/s/things/v1/Property: mdi-contain-start
-  https://concepts.datalad.org/s/flat/unreleased/FlatProperty: mdi-contain-start
-  https://concepts.datalad.org/s/flat/unreleased/AnnotationTag: mdi-tag-outline
