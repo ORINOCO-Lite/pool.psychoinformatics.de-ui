@@ -177,7 +177,7 @@ use_gitannex_p2phttp: true
 gitannex_p2phttp_config:
   base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
   annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
-  client_uuid: shacl-vue
+  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
 footer_links: []
 class_icons:
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAccolade: mdi-medal
