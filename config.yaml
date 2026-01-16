@@ -79,7 +79,7 @@ id_autogenerate:
     id_autogenerate_prepend: rules/
   https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZTopic:
     id_autogenerate_prefix: xyzrsens
-    id_autogenerate_prepend: topic/
+    id_autogenerate_prepend: topics/
 id_resolves_externally:
   - bibo
   - doi
