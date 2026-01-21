@@ -1,4 +1,4 @@
-external_config_url: https://hub.psychoinformatics.de/datalink/shacl-vue/raw/commit/8be6701ba6fce8fdb79c8363ba14821e9a0790af/public/config_default.json
+external_config_url: https://hub.psychoinformatics.de/datalink/shacl-vue/raw/branch/main/public/config_default.json
 app_name: PsyInf Knowledge Pooling Tool
 page_title: PsyInf Knowledge
 documentation_url: ''
@@ -139,7 +139,7 @@ display_name_autogenerate:
   xyzrse:XYZAccolade: '{dlcommonmx:title}'
   xyzrse:XYZAgentRole: '{dlcommonmx:name}'
   xyzrse:XYZAssociation: '{rdf:object} ({dlrelationsmx:roles})'
-  xyzrse:XYZCommunication: '{rdf:object} ({dlrelationsmx:roles})'
+  xyzrse:XYZCommunication: '{rdf:object} (through {xyzrse:entity})'
   xyzrse:XYZConvention: '{dlcommonmx:short_name}'
   xyzrse:XYZDataset: '{dlcommonmx:title}'
   xyzrse:XYZDocument: '{dlcommonmx:title}'
