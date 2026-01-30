@@ -3,7 +3,7 @@
 # --------------------
 app_name: PsyInf Knowledge Pooling Tool
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/config_default_rsegroup.yaml
+external_config_url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
@@ -44,7 +44,7 @@ component_config:
       pid_template: datalad:aa2b2132-f3f1-4d62-b245-d9717722897e/uuid/{_randomUUID}
       ttl_template: content:DocumentUploadTemplate
 filter_records_by:
-  - dlcommonmx:short_name
+  - dlthings:short_name
 
 # -----------------------
 # Service API integration
@@ -56,9 +56,7 @@ service_base_url:
     type: read
 service_fetch_before:
   get-record: []
-  get-records:
-    - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZAgentRole
-    - https://concepts.datalad.org/s/demo-rse-group/unreleased/XYZPerson
+  get-records: []
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials.
 token_info_url: ''
 use_service: true
