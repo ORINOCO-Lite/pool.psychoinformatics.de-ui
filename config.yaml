@@ -45,6 +45,8 @@ component_config:
       ttl_template: content:DocumentUploadTemplate
 filter_records_by:
   - dlthings:short_name
+show_classes:
+  - https://concepts.datalad.org/s/things/unreleased/Rule
 
 # -----------------------
 # Service API integration
