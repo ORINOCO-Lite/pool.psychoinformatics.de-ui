@@ -47,6 +47,7 @@ filter_records_by:
   - dlthings:short_name
 show_classes:
   - https://concepts.datalad.org/s/things/unreleased/Rule
+  - https://concepts.datalad.org/s/things/unreleased/Property
 
 # -----------------------
 # Service API integration
