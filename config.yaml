@@ -46,8 +46,10 @@ component_config:
 filter_records_by:
   - dlthings:short_name
 show_classes:
+  - https://concepts.datalad.org/s/things/unreleased/AnnotationTag
   - https://concepts.datalad.org/s/things/unreleased/Rule
   - https://concepts.datalad.org/s/things/unreleased/Property
+  - https://concepts.datalad.org/s/things/unreleased/Convention
 
 # -----------------------
 # Service API integration
