@@ -12,7 +12,11 @@ source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-
 # -------
 content:
   DocumentUploadTemplate:
-    url: DocumentUploadTemplate.ttl
+    url: templates/DocumentUploadTemplate.ttl
+  DOIWizardTemplate:
+    url: templates/DOIWizardTemplate.ttl
+  DOIlogo:
+    url: images/DOI_logo_24.svg
 
 # --------------
 # Theme settings
@@ -50,6 +54,26 @@ show_classes:
   - https://concepts.datalad.org/s/things/unreleased/Rule
   - https://concepts.datalad.org/s/things/unreleased/Property
   - https://concepts.datalad.org/s/things/unreleased/Convention
+  - https://concepts.datalad.org/s/things/unreleased/DOI
+wizard_editors:
+  DOIWizard:
+    name: DOI Wizard
+    tooltip: Add a Digital Object Identifier
+    icon: content:DOIlogo
+    description: Enter the 'Notation' field and hit *Save* in order to create a DOI record
+    inputs:
+      - prop: notation
+        name: Notation
+        description: This is the unique DOI identifier text following the creator URI (typically 'http://doi.org/')
+        type: text
+        placeholder: 'example: 10.21105/joss.03262'
+        required: true
+        # pattern: 
+        # default:
+    template: content:DOIWizardTemplate
+wizard_editor_selection:
+  xyzri:XYZPublication:
+    - DOIWizard
 
 # -----------------------
 # Service API integration
@@ -66,6 +90,10 @@ token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credential
 token_info_url: ''
 use_service: true
 use_token: true
+service_fetch_before:
+  get_records:
+    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
+    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
 
 # ----------------
 # Special features
