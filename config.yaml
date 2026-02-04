@@ -90,10 +90,10 @@ token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credential
 token_info_url: ''
 use_service: true
 use_token: true
-service_fetch_before:
-  get_records:
-    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
-    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
+# service_fetch_before:
+#   get_records:
+#     - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
+#     - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
 
 # ----------------
 # Special features
