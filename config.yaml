@@ -73,7 +73,8 @@ wizard_editors:
     template: content:DOIWizardTemplate
 wizard_editor_selection:
   xyzri:XYZPublication:
-    - DOIWizard
+    _record:
+      - DOIWizard
 
 # -----------------------
 # Service API integration

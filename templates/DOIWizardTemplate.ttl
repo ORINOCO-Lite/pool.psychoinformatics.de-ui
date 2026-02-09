@@ -1,5 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix dlthings: <https://concepts.datalad.org/s/things/unreleased/> .
+@prefix dlthings: <https://concepts.datalad.org/s/things/v2/> .
 @prefix ror: <https://ror.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
