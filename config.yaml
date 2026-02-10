@@ -17,6 +17,8 @@ content:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
     url: images/DOI_logo_24.svg
+  file-upload-template:
+    url: templates/file-upload.ttl
 
 # --------------
 # Theme settings
@@ -71,10 +73,25 @@ wizard_editors:
         # pattern: 
         # default:
     template: content:DOIWizardTemplate
+  FileUploadWizard:
+    name: File Upload Wizard
+    tooltip: Upload a file
+    icon: mdi-file-upload-outline
+    description: Upload a file and hit *Save*
+    inputs:
+      - prop: file
+        name: File
+        type: upload
+        required: true
+    template: content:file-upload-template
 wizard_editor_selection:
   xyzri:XYZPublication:
     _record:
       - DOIWizard
+  _slots:
+    dlthings:distributions:
+      _record:
+        - FileUploadWizard
 
 # -----------------------
 # Service API integration
@@ -84,17 +101,14 @@ service_base_url:
     type: write
   - url: https://pool.psychoinformatics.de/api/public/
     type: read
-service_fetch_before:
-  get-record: []
-  get-records: []
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials.
 token_info_url: ''
 use_service: true
 use_token: true
-# service_fetch_before:
-#   get_records:
-#     - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
-#     - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
+service_fetch_before:
+  get_records:
+    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
+    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
 
 # ----------------
 # Special features
@@ -104,3 +118,12 @@ gitannex_p2phttp_config:
   annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
   client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
 use_gitannex_p2phttp: true
+
+gitannex_p2phttp_config_wizard:
+  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
+  targets:
+    - name: Psychoinformatics Hub
+      base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
+      repositories:
+        - name: File Upload Repo
+          annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
