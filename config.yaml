@@ -85,11 +85,15 @@ component_config:
 filter_records_by:
   - dlthings:short_name
 show_classes:
-  - https://concepts.datalad.org/s/things/unreleased/AnnotationTag
-  - https://concepts.datalad.org/s/things/unreleased/Rule
-  - https://concepts.datalad.org/s/things/unreleased/Property
-  - https://concepts.datalad.org/s/things/unreleased/Convention
-  - https://concepts.datalad.org/s/things/unreleased/DOI
+  - https://concepts.datalad.org/s/things/v2/AnnotationTag
+  - https://concepts.datalad.org/s/things/v2/Convention
+  # must list the next to get all identifiers to show
+  - https://concepts.datalad.org/s/things/v2/Identifier
+  - https://concepts.datalad.org/s/things/v2/DOI
+  - https://concepts.datalad.org/s/things/v2/ISSN
+  - https://concepts.datalad.org/s/things/v2/ORCID
+  - https://concepts.datalad.org/s/things/v2/Rule
+  - https://concepts.datalad.org/s/things/v2/Property
 wizard_editors:
   DOIWizard:
     name: DOI Wizard
