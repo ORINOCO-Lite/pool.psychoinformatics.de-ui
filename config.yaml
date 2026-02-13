@@ -16,9 +16,11 @@ content:
   DOIWizardTemplate:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
-    url: images/DOI_logo_24.svg
+    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/DOI_logo_24.svg
   file-upload-template:
     url: templates/file-upload.ttl
+  orcid-logo:
+    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/orcid_logo_24.svg
 
 # --------------
 # Theme settings
@@ -49,6 +51,37 @@ component_config:
     dlthings:Thing:
       pid_template: datalad:aa2b2132-f3f1-4d62-b245-d9717722897e/uuid/{_randomUUID}
       ttl_template: content:DocumentUploadTemplate
+  NodeShapeViewer:
+    specialButtons:
+      ORCID:
+        slot: dcterms:identifier
+        match:
+          - key: rdf:type
+            val: xyzri:ORCID
+        return: skos:notation
+        template: 'https://orcid.org/{return}'
+        icon: content:orcid-logo
+        tooltip: Visit ORCID page
+      DOI:
+        slot: dcterms:identifier
+        match:
+          - key: rdf:type
+            val: dlthings:DOI
+        return: skos:notation
+        template: 'https://doi.org/{return}'
+        icon: content:DOIlogo
+        tooltip: Go to DOI
+      DownloadUrl:
+        slot: dlthings:characterized_by
+        match:
+          - key: rdf:type
+            val: dlthings:Statement
+          - key: rdf:predicate
+            val: dcat:downloadUrl
+        return: rdf:object
+        template: '{return}'
+        icon: mdi-download
+        tooltip: Download
 filter_records_by:
   - dlthings:short_name
 show_classes:

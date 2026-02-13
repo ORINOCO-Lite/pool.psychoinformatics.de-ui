@@ -18,7 +18,6 @@ build: clean
 	cp favicon.ico $(DIST_DIR)/favicon.ico
 	cp *logo* $(DIST_DIR)/
 	cp -r templates $(DIST_DIR)/
-	cp -r images $(DIST_DIR)/
 
 # Clean output
 clean:
