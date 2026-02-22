@@ -3,7 +3,7 @@
 # --------------------
 app_name: PsyInf Knowledge Pooling Tool
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
+external_config_url: https://hub.psychoinformatics.de/datalink/assets/raw/commit/856da99d5d4b0a5337fa53253a62d7a8d399fb83/shacl-vue/config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
@@ -85,15 +85,20 @@ component_config:
 filter_records_by:
   - dlthings:short_name
 show_classes:
-  - https://concepts.datalad.org/s/things/v2/AnnotationTag
-  - https://concepts.datalad.org/s/things/v2/Convention
+  - dlthings:AnnotationTag
+  - dlthings:Convention
   # must list the next to get all identifiers to show
-  - https://concepts.datalad.org/s/things/v2/Identifier
-  - https://concepts.datalad.org/s/things/v2/DOI
-  - https://concepts.datalad.org/s/things/v2/ISSN
-  - https://concepts.datalad.org/s/things/v2/ORCID
-  - https://concepts.datalad.org/s/things/v2/Rule
-  - https://concepts.datalad.org/s/things/v2/Property
+  - dlthings:Identifier
+  - dlthings:DOI
+  - dlthings:ISSN
+  - dlthings:ORCID
+  - dlthings:Rule
+  - dlthings:Property
+# priority_classes:
+#   - class: dlthings:Thing
+#     icon: mdi-view-list
+#     title: All
+#     include_subclasses: true
 wizard_editors:
   DOIWizard:
     name: DOI Wizard
@@ -144,8 +149,8 @@ use_service: true
 use_token: true
 service_fetch_before:
   get_records:
-    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson
-    - https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole
+    - xyzri:XYZPerson
+    - xyzri:XYZAgentRole
 
 # ----------------
 # Special features
