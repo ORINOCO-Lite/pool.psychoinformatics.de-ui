@@ -52,6 +52,9 @@ component_config:
       pid_template: datalad:aa2b2132-f3f1-4d62-b245-d9717722897e/uuid/{_randomUUID}
       ttl_template: content:DocumentUploadTemplate
   NodeShapeViewer:
+    hideBackLinks:
+      - dlthings:AnnotationTag
+      - xyzri:AgentRole
     specialButtons:
       ORCID:
         slot: dcterms:identifier
