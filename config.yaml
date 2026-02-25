@@ -108,11 +108,11 @@ show_classes:
   - dlthings:ORCID
   - dlthings:Rule
   - dlthings:Property
-# priority_classes:
-#   - class: dlthings:Thing
-#     icon: mdi-view-list
-#     title: All
-#     include_subclasses: true
+priority_classes:
+  - class: dlthings:Thing
+    icon: mdi-view-list
+    title: All
+    include_subclasses: true
 wizard_editors:
   DOIWizard:
     name: DOI Wizard
