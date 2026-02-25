@@ -3,7 +3,7 @@
 # --------------------
 app_name: PsyInf Knowledge Pooling Tool
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/datalink/assets/raw/commit/856da99d5d4b0a5337fa53253a62d7a8d399fb83/shacl-vue/config_default_xyzri.yaml
+external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/psyinf-config/shacl-vue/config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
@@ -85,6 +85,17 @@ component_config:
         template: '{return}'
         icon: mdi-download
         tooltip: Download
+      Homepage:
+        slot: dlthings:attributes
+        match:
+          - key: rdf:type
+            val: dlthings:AttributeSpecification
+          - key: rdf:predicate
+            val: foaf:homepage
+        return: rdf:value
+        template: '{return}'
+        icon: mdi-home
+        tooltip: Homepage
 filter_records_by:
   - dlthings:short_name
 show_classes:
