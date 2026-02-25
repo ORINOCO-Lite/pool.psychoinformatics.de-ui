@@ -108,6 +108,8 @@ show_classes:
   - dlthings:ORCID
   - dlthings:Rule
   - dlthings:Property
+no_edit_classes:
+  - xyzri:XYZBibliographicType
 priority_classes:
   - class: dlthings:Thing
     icon: mdi-view-list
