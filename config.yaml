@@ -164,9 +164,10 @@ token_info_url: ''
 use_service: true
 use_token: true
 service_fetch_before:
-  get_records:
-    - xyzri:XYZPerson
+  get-records:
     - xyzri:XYZAgentRole
+    - xyzri:XYZDepictionType
+    - xyzri:XYZPerson
 
 # ----------------
 # Special features
