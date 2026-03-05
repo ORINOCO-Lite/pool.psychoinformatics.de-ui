@@ -3,7 +3,7 @@
 # --------------------
 app_name: PsyInf Knowledge Pooling Tool
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/psyinf-config/shacl-vue/config_default_xyzri.yaml
+external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
