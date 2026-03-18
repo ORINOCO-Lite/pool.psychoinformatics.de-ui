@@ -13,6 +13,8 @@ source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-
 content:
   DocumentUploadTemplate:
     url: templates/DocumentUploadTemplate.ttl
+  DOIImportWizardTemplate:
+    url: templates/DOIImportTemplate.nunjucks.ttl
   DOIWizardTemplate:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
@@ -131,6 +133,40 @@ wizard_editors:
         # pattern: 
         # default:
     template: content:DOIWizardTemplate
+  DOIImportWizard:
+    name: DOI Import Wizard
+    tooltip: Import a publication via DOI
+    icon: mdi-import
+    description: >-
+      Enter the 'DOI' field and hit *Import* in order to import metadata.
+      This will prepopulate editable fields such as *Title* and *Authors*.
+      An attempt is made to match individual imported *Author*s with known
+      *Person* records via ORCID identifiers. These matches can be accepted
+      as is without editing. The dropdown next to each imported and unmatched
+      author can be used to manually identify the correct associated Person
+      record. Also, additional authors can be added to the list. If no Person
+      record is selected for any given author in the list, a new Person record
+      will be created with a random and unique identifier, associated with the
+      entered given and family name.
+    component: doi:DOIFetcher
+    inputs:
+      - prop: title
+        type: text
+      - prop: abstract
+        type: text-paragraph
+      - prop: authors
+        type: object
+        multi_valued: true
+        inputs:
+          - prop: pid
+            type: text
+          - prop: given_name
+            type: text
+          - prop: family_name
+            type: text
+          - prop: role
+            type: select
+    template: content:DOIImportWizardTemplate
   FileUploadWizard:
     name: File Upload Wizard
     tooltip: Upload a file
@@ -144,6 +180,8 @@ wizard_editors:
     template: content:file-upload-template
 wizard_editor_selection:
   xyzri:XYZPublication:
+    _class:
+      - DOIImportWizard
     _record:
       - DOIWizard
   _slots:
