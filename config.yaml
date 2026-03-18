@@ -14,7 +14,7 @@ content:
   DocumentUploadTemplate:
     url: templates/DocumentUploadTemplate.ttl
   DOIImportWizardTemplate:
-    url: templates/DOIImportTemplate.nunjucks.ttl
+    url: templates/DOIImportWizardTemplate.nunjucks.ttl
   DOIWizardTemplate:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
