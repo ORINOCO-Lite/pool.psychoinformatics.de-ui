@@ -44,6 +44,6 @@ _:doiNode a dlthings:DOI ;
 <{{ pubURI }}> dlthings:attributed_to _:attr{{ loop.index }} .
 _:attr{{ loop.index }} a dlthings:Attribution ;
     rdf:object <{{ personURI }}> ;
-    dlthings:roles {{ author.role | ttl }} .
+    dlthings:roles <{{ author.role }}> .
     
 {% endfor -%}
