@@ -3,9 +3,15 @@
     <v-row align="stretch">
         <v-col cols="10">
             <v-text-field v-model="doiText" label="DOI" variant="outlined" density="compact"></v-text-field>
+            <v-card v-if="showError" flat style="margin-top: 0">
+                <v-card-text>
+                    <v-icon color="error">mdi-alert</v-icon> <em>{{ errorTitle }}:</em> {{ errorMessage }}
+                    <v-btn @click="clearError" density="compact">Ok</v-btn>
+                </v-card-text>
+            </v-card>
         </v-col>
         <v-col>
-            <v-btn @click="importMetadata">Import</v-btn>
+            <v-btn @click="checkThenImportMetadata">Import</v-btn>
         </v-col>
     </v-row>
 
@@ -113,14 +119,15 @@
                 >Add author</v-btn>
             </span>
         </v-card-text>
-    </v-card>
-    
+    </v-card>    
 </template>
 
 <script setup>
 import { ref, inject, toRaw, onMounted, watch} from 'vue'
 import { SHACL } from '@/modules/namespaces';
 import InstancesSelectEditor4Wiz from '@/components/InstancesSelectEditor4Wiz.vue';
+import { namespace } from 'shacl-tulip';
+const XYZRI = namespace('https://concepts.datalad.org/s/demo-research-information/unreleased/');
 
 const props = defineProps({
     config: Object,
@@ -130,25 +137,41 @@ const props = defineProps({
 const modelVals = defineModel('modelVals')
 const emit = defineEmits(['uploadComplete', 'init-form'])
 const plugins = inject('runtimePlugins')
+const fetchFromService = inject('fetchFromService')
+const allPrefixes = inject('allPrefixes')
 
 const rdfDS = inject('rdfDS')
 const doiText = ref('')
 const prop_shape_person = {
-    [SHACL.class.value]: 'https://concepts.datalad.org/s/demo-research-information/unreleased/XYZPerson',
+    [SHACL.class.value]: XYZRI.XYZPerson.value,
     [SHACL.nodeKind.value]: SHACL.IRI.value,
     [SHACL.path.value]:'',
     [SHACL.description.value]:'',
 }
 const prop_shape_role = {
-    [SHACL.class.value]: 'https://concepts.datalad.org/s/demo-research-information/unreleased/XYZAgentRole',
+    [SHACL.class.value]: XYZRI.XYZAgentRole.value,
     [SHACL.nodeKind.value]: SHACL.IRI.value,
     [SHACL.path.value]:'',
     [SHACL.description.value]:'',
 }
-
+const showError = ref(false);
+const errorTitle = ref('');
+const errorMessage = ref('');
 onMounted(() => {
 
 })
+
+function clearError() {
+    showError.value = false;
+    errorTitle.value = '';
+    errorMessage.value = '';
+}
+
+function loadError(title, message) {
+    showError.value = true;
+    errorTitle.value = title;
+    errorMessage.value = message;
+}
 
 function addAuthor() {
     modelVals.value['authors'].push(
@@ -166,8 +189,35 @@ function removeAuthor(idx) {
     modelVals.value['authors'].splice(idx,1)
 }
 
+async function checkThenImportMetadata() {
+    // First check if a publication with the doi is already in the pool
+    // if so: instruct user to rather edit the existing record
+
+    // First do a constrained fetch for all publication records referencing the doi
+    const result = await fetchFromService(
+        'get-paginated-records-constrained',
+        XYZRI.XYZPublication.value,
+        allPrefixes,
+        doiText.value
+    );
+    if (result.status === null) {
+        console.error(result.error);
+    }
+    // Now we find a publication with said DOI, either in identifiers or as pid
+    let pub = await plugins['doi'].api.findPublicationWithDOI(doiText.value, rdfDS)
+    if (pub) {
+        let title = 'Known DOI'
+        let message = `A publication record with the specified DOI (${doiText.value}) already exists in the knowledge base. Please edit the existing record rather than importing a new one.`
+        loadError(title, message)
+        return
+    }
+    // Otherwise we continue
+    importMetadata()
+}
+
 // Validate file type and read it
-const importMetadata = async () => {  
+const importMetadata = async () => {
+    clearError()
     emit('init-form')
     try {
         let result = await plugins['doi'].api.importMetadata(
@@ -189,6 +239,9 @@ const importMetadata = async () => {
             a.row_key = a.given_name+a.family_name;
         }
     } catch (error) {
+        let title = 'DOI Fetch Error'
+        let message = error
+        loadError(title, message)
         console.error(error)
     }
 }

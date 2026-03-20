@@ -1,4 +1,4 @@
-import { DLTHINGS, SKOS } from '@/modules/namespaces';
+import { DLTHINGS, RDF, SKOS } from '@/modules/namespaces';
 import { namespace } from 'shacl-tulip';
 import { DataFactory } from 'n3';
 
@@ -7,6 +7,7 @@ const DCTERMS = namespace('http://purl.org/dc/terms/');
 const OBO = namespace('http://purl.obolibrary.org/obo/');
 const MARCREL = namespace('http://id.loc.gov/vocabulary/relators/');
 const DOI_BASE = "https://doi.org/"
+const XYZRI = namespace('https://concepts.datalad.org/s/demo-research-information/unreleased/');
 
 export async function importMetadata(args) {
     const doi = args.doi;
@@ -15,9 +16,8 @@ export async function importMetadata(args) {
         let result = await fetchCSL(doi);
         const enrichedRecord = processRecord(result, rdfDS);
         return enrichedRecord
-        
     } catch (error) {
-        alert('Failed to process doi!\n\n' + error.message)
+        throw(error)
     }
 }
 
@@ -65,7 +65,7 @@ function getContributions(citeprocMetadata, rdfDS) {
         let person_pid
         let person_found_via
         if (auth['ORCID']) {
-            person_pid = findPersonWithORCID(auth['ORCID'].replace('https://orcid.org/', ''), rdfDS)
+            person_pid = findRecordWithIdentifier(auth['ORCID'].replace('https://orcid.org/', ''), rdfDS)
             person_found_via = 'orcid'
         }
         attr['object'] = person_pid;
@@ -85,15 +85,15 @@ function getContributions(citeprocMetadata, rdfDS) {
     }
 }
 
-function findPersonWithORCID(orcid, rdfDS) {
+function findRecordWithIdentifier(notation, rdfDS) {
 
     let identifiers = rdfDS.data.graph.getQuads(
         null,
         namedNode(SKOS.notation.value),
-        literal(orcid),
+        literal(notation),
         null
     ).map(q => q.subject);
-    const persons = identifiers.flatMap(id =>
+    const records = identifiers.flatMap(id =>
         rdfDS.data.graph.getQuads(
             null,
             namedNode(DCTERMS.identifier.value),
@@ -101,8 +101,28 @@ function findPersonWithORCID(orcid, rdfDS) {
             null
         ).map(q => q.subject)
     )
-    if (persons.length) {
-        return persons[0].value
+    if (records.length) {
+        return records[0].value
+    }
+    return undefined
+}
+
+export function findPublicationWithDOI(doi, rdfDS) {
+    // First try and find publication records with linked identifiers
+    // Then try to find publications with DOI as PID
+    let publication = findRecordWithIdentifier(doi, rdfDS)
+    if (publication) {
+        return publication
+    } else {
+        let pubPIDs = rdfDS.data.graph.getQuads(
+            namedNode(`${DOI_BASE}${doi}`),
+            namedNode(RDF.type.value),
+            namedNode(XYZRI.XYZPublication.value),
+            null
+        ).map(q => q.subject);
+        if (pubPIDs.length) {
+            return pubPIDs[0].value;
+        }
     }
     return undefined
 }
@@ -144,8 +164,17 @@ function getAuthorRole(author) {
     return MARCREL.aut.value;
 }
 
+function htmlDecode(input) {
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent;
+}
+
 function getTitle(citeprocMetadata) {
-    return citeprocMetadata.title ?? ''
+    return citeprocMetadata.title ? htmlDecode(citeprocMetadata.title) : ''
+}
+
+function getAbstract(citeprocMetadata) {
+    return citeprocMetadata.abstract ? htmlDecode(citeprocMetadata.abstract) : ''
 }
 
 function processRecord(citeprocMetadata, rdfDS) {
@@ -154,6 +183,7 @@ function processRecord(citeprocMetadata, rdfDS) {
     // licenses => rules
     const {persons, contributions} = getContributions(citeprocMetadata, rdfDS)
     const title = getTitle(citeprocMetadata, rdfDS)
+    const abstract = getAbstract(citeprocMetadata, rdfDS)
     const pub = {
         attributed_to: contributions,
         generated_by: [],
@@ -166,6 +196,6 @@ function processRecord(citeprocMetadata, rdfDS) {
     return {
         authors: persons,
         title: title,
-        abstract: '',
+        abstract: abstract,
     }
 }
