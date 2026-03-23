@@ -192,6 +192,9 @@ wizard_editors:
         required: true
     template: content:file-upload-template
 wizard_editor_selection:
+  xyzri:XYZPerson:
+    _record:
+      - DepictionUploadWizard
   xyzri:XYZPublication:
     _class:
       - DOIImportWizard
