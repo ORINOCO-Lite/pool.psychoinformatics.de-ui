@@ -11,6 +11,8 @@ source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-
 # Content
 # -------
 content:
+  person-depiction-upload:
+    url: templates/person-depiction-upload.nunjucks.ttl
   DocumentUploadTemplate:
     url: templates/DocumentUploadTemplate.ttl
   DOIImportWizardTemplate:
@@ -118,6 +120,17 @@ priority_classes:
     title: All
     include_subclasses: true
 wizard_editors:
+  DepictionUploadWizard:
+    name: Depiction Upload Wizard
+    tooltip: Upload a depiction
+    icon: mdi-account-box-outline
+    description: Upload an image of the person and hit *Save*
+    inputs:
+      - prop: file
+        name: File
+        type: upload
+        required: true
+    template: content:person-depiction-upload
   DOIWizard:
     name: DOI Wizard
     tooltip: Add a Digital Object Identifier
