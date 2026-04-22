@@ -219,9 +219,14 @@ use_service: true
 use_token: true
 service_fetch_before:
   get-records:
+    - xyzri:XYZActivity
     - xyzri:XYZAgentRole
+    - xyzri:XYZBibliographicType
+    - xyzri:XYZCompetitionType
     - xyzri:XYZDepictionType
+    - xyzri:XYZInstrumentType
     - xyzri:XYZPerson
+    - xyzri:XYZTopic
 
 # ----------------
 # Special features
