@@ -100,6 +100,28 @@ component_config:
         template: '{return}'
         icon: mdi-home
         tooltip: Homepage
+      Documentation:
+        slot: dlthings:attributes
+        match:
+          - key: rdf:type
+            val: dlthings:AttributeSpecification
+          - key: rdf:predicate
+            val: obo:NGBO_6000416
+        return: rdf:value
+        template: '{return}'
+        icon: mdi-text-box
+        tooltip: Documentation
+      SourceCodeRepo:
+        slot: dlthings:attributes
+        match:
+          - key: rdf:type
+            val: dlthings:AttributeSpecification
+          - key: rdf:predicate
+            val: obo:APOLLO_SV_00000488
+        return: rdf:value
+        template: '{return}'
+        icon: mdi-code-block-tags
+        tooltip: Source code
 filter_records_by:
   - dlthings:short_name
 show_classes:
