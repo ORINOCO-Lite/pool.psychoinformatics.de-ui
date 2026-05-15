@@ -19,7 +19,7 @@ build-ui: clean-ui
 	cp -r $(PLUGIN_DIR) $(RUNTIME_PLUGIN_DIR)
 	cd $(VUE_APP_DIR) && npm run build:app
 	mkdir -p ./$(DIST_DIR_UI)
-	mv $(VUE_APP_DIR)/dist/app ./$(DIST_DIR_UI)
+	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_UI)
 	cp config.* $(DIST_DIR_UI)/
 	cp favicon.ico $(DIST_DIR_UI)/favicon.ico
 	cp *logo* $(DIST_DIR_UI)/
@@ -29,7 +29,7 @@ build-starter: clean-starter
 	cp -r $(PLUGIN_DIR) $(RUNTIME_PLUGIN_DIR)
 	cd $(VUE_APP_DIR) && VITE_SHACLVUE_VARIANT=starter npm run build:app
 	mkdir -p ./$(DIST_DIR_STARTER)
-	mv $(VUE_APP_DIR)/dist/app ./$(DIST_DIR_STARTER)
+	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_STARTER)
 	cp config.* $(DIST_DIR_STARTER)/
 	cp favicon.ico $(DIST_DIR_STARTER)/favicon.ico
 	cp *logo* $(DIST_DIR_STARTER)/
