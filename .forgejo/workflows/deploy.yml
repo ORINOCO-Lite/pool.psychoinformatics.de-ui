@@ -21,13 +21,15 @@ jobs:
           submodules: true
 
       - name: Build
-        run: make install build
+        run: make all
 
       - name: Package
         run: |
           # we need to have the editor served from a `ui/` path
+          # and the starter editir from the `starter/` path
+          # both subdirectories are already present in `dist/`
           mkdir deploy
-          mv dist deploy/ui
+          mv dist deploy
 
       - name: Deploy
         run: cp -r deploy /www/pool.psychoinformatics.de-new && (test -d && mv /www/pool.psychoinformatics.de /www/pool.psychoinformatics.de-old || true); mv /www/pool.psychoinformatics.de-new /www/pool.psychoinformatics.de; rm -rf /www/pool.psychoinformatics.de-old

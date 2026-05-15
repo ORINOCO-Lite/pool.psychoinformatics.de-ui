@@ -2,6 +2,7 @@
 # General app settings
 # --------------------
 app_name: PsyInf Knowledge Pooling Tool
+app_name_starter: PsyInf Knowledge Kickstarter
 documentation_url: ''
 external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
 page_title: PsyInf Knowledge
@@ -11,6 +12,8 @@ source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-
 # Content
 # -------
 content:
+  add-record:
+    url: templates/add-record.nunjucks.ttl
   person-depiction-upload:
     url: templates/person-depiction-upload.nunjucks.ttl
   DocumentUploadTemplate:
@@ -142,6 +145,24 @@ priority_classes:
     title: All
     include_subclasses: true
 wizard_editors:
+  AddRecordWizard:
+    name: Quick-Add New Record
+    tooltip: Quick Add
+    icon: mdi-plus-box
+    description: Add the display name and description and then hit *Save*
+    inputs:
+      - prop: name
+        name: Display name
+        description: The display name of the new record
+        type: text
+        placeholder: 'My record title'
+        required: true
+      - prop: description
+        name: Description
+        description: The description of the new record
+        type: text-paragraph
+        placeholder: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...'
+    template: content:add-record
   DepictionUploadWizard:
     name: Depiction Upload Wizard
     tooltip: Upload a depiction
@@ -214,6 +235,8 @@ wizard_editors:
         required: true
     template: content:file-upload-template
 wizard_editor_selection:
+  _classes:
+    - AddRecordWizard
   xyzri:XYZPerson:
     _record:
       - DepictionUploadWizard
