@@ -1,7 +1,7 @@
 # Important directories
 VUE_APP_DIR = shacl-vue
 DIST_DIR_UI = dist/ui
-DIST_DIR_STARTER = dist/starter
+DIST_DIR_STARTER = dist/kickstarter
 PLUGIN_DIR = plugins
 RUNTIME_PLUGIN_DIR = $(VUE_APP_DIR)/src/runtime-plugins
 
