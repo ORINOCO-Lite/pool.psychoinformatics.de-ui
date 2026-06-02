@@ -45,4 +45,10 @@ clean-ui:
 clean-starter:
 	rm -rf $(DIST_DIR_STARTER)
 
-.PHONY: install build-ui build-starter clean-ui clean-starter deploy
+test-ui: install build-ui
+	npx serve $(DIST_DIR_UI) -l 3000
+
+test-starter: install build-starter
+	npx serve $(DIST_DIR_STARTER) -l 3000
+
+.PHONY: install build-ui build-starter clean-ui clean-starter deploy test-ui
