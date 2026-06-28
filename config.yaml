@@ -292,3 +292,11 @@ gitannex_p2phttp_config_wizard:
           annex_uuid: cedde37c-416a-41fd-87e0-4ac100df4bf7
         - name: Private uploads
           annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
+
+# -------------
+# Update shapes
+#--------------
+update_shapes_default:
+  _all_property_shapes:
+    dlthings:pid:
+      sh:minCount: 1
