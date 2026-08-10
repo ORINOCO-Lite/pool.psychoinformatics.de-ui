@@ -25,7 +25,7 @@ build-ui: clean-ui
 	npm run build:app
 	mkdir -p ./$(DIST_DIR_UI)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_UI)
-	cp config.* $(DIST_DIR_UI)/
+	cp config*.yaml $(DIST_DIR_UI)/
 	cp favicon.ico $(DIST_DIR_UI)/favicon.ico
 	cp *logo* $(DIST_DIR_UI)/
 	cp -r templates $(DIST_DIR_UI)/
@@ -40,7 +40,7 @@ build-starter: clean-starter
 	VITE_SHACLVUE_VARIANT=starter npm run build:app
 	mkdir -p ./$(DIST_DIR_STARTER)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_STARTER)
-	cp config.* $(DIST_DIR_STARTER)/
+	cp config*.yaml $(DIST_DIR_STARTER)/
 	cp favicon.ico $(DIST_DIR_STARTER)/favicon.ico
 	cp *logo* $(DIST_DIR_STARTER)/
 	cp -r templates $(DIST_DIR_STARTER)/
