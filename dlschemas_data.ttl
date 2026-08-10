@@ -1,0 +1,3 @@
+# Records are served by the local Dump Things service. This file is
+# intentionally empty; it is retained because the upstream UI build expects
+# the standard schema asset names.
