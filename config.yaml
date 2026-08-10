@@ -293,6 +293,17 @@ gitannex_p2phttp_config_wizard:
         - name: Private uploads
           annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
 
+oidc:
+  - name: Psychoinformatics Hub
+    base_url: https://hub.psychoinformatics.de
+    auth_endpoint: login/oauth/authorize
+    token_endpoint: login/oauth/access_token
+    client_id: 0d8a5a00-6aed-4cee-9317-baeb9888b4b2
+    redirect_url: https://pool.psychoinformatics.de/ui/auth/oidc-callback.html
+    response_type: code
+    code_challenge_method: S256
+    grant_type: authorization_code
+
 # -------------
 # Update shapes
 #--------------
