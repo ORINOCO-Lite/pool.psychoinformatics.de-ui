@@ -4,7 +4,7 @@
 app_name: PsyInf Knowledge Pooling Tool
 app_name_starter: PsyInf Knowledge Kickstarter
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
+external_config_url: config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
@@ -23,11 +23,11 @@ content:
   DOIWizardTemplate:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
-    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/DOI_logo_24.svg
+    url: DOI_logo_24.svg
   file-upload-template:
     url: templates/file-upload.ttl
   orcid-logo:
-    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/orcid_logo_24.svg
+    url: orcid_logo_24.svg
 
 # --------------
 # Theme settings
@@ -254,9 +254,9 @@ wizard_editor_selection:
 # Service API integration
 # -----------------------
 service_base_url:
-  - url: https://pool.psychoinformatics.de/api/protected/
+  - url: http://127.0.0.1:8111/protected/
     type: write
-  - url: https://pool.psychoinformatics.de/api/public/
+  - url: http://127.0.0.1:8111/public/
     type: read
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials, or log in / refresh token via the Psychoinformatics Hub.
 token_info_url: ''
