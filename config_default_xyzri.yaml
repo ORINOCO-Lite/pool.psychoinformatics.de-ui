@@ -83,7 +83,8 @@ id_resolves_externally:
   - rrid
   - sio
   - spdxlic
-# prefixes:
+prefixes:
+  xyzrins: https://concepts.datalad.org/s/demo-research-information/ns/
 
 # ------------
 # UI behaviour
