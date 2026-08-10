@@ -26,6 +26,7 @@ build-ui: clean-ui
 	mkdir -p ./$(DIST_DIR_UI)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_UI)
 	cp config*.yaml $(DIST_DIR_UI)/
+	cp dlschemas_*.ttl $(DIST_DIR_UI)/
 	cp favicon.ico $(DIST_DIR_UI)/favicon.ico
 	cp *logo* $(DIST_DIR_UI)/
 	cp -r templates $(DIST_DIR_UI)/
@@ -41,6 +42,7 @@ build-starter: clean-starter
 	mkdir -p ./$(DIST_DIR_STARTER)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_STARTER)
 	cp config*.yaml $(DIST_DIR_STARTER)/
+	cp dlschemas_*.ttl $(DIST_DIR_STARTER)/
 	cp favicon.ico $(DIST_DIR_STARTER)/favicon.ico
 	cp *logo* $(DIST_DIR_STARTER)/
 	cp -r templates $(DIST_DIR_STARTER)/
