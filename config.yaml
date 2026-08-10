@@ -277,21 +277,19 @@ service_fetch_before:
 # Special features
 # ----------------
 gitannex_p2phttp_config:
-  base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
-  annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
-  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
+  base_url: http://127.0.0.1:8122/git-annex
+  annex_uuid: 00000000-0000-0000-0000-000000000001
+  client_uuid: local-shacl-vue
 use_gitannex_p2phttp: true
 
 gitannex_p2phttp_config_wizard:
-  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
+  client_uuid: local-shacl-vue
   targets:
-    - name: Psychoinformatics Hub
-      base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
+    - name: Local git-annex
+      base_url: http://127.0.0.1:8122/git-annex
       repositories:
-        - name: Public uploads
-          annex_uuid: cedde37c-416a-41fd-87e0-4ac100df4bf7
-        - name: Private uploads
-          annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
+        - name: Local uploads
+          annex_uuid: 00000000-0000-0000-0000-000000000001
 
 oidc:
   - name: Psychoinformatics Hub
