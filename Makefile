@@ -20,8 +20,9 @@ build-ui: clean-ui
 	cd $(VUE_APP_DIR) && \
 	BUILD_GIT_COMMIT="$(shell git rev-parse HEAD)" \
 	BUILD_GIT_COMMIT_SHORT="$(shell git rev-parse --short HEAD)" \
-	BUILD_GIT_BRANCH="$(shell git rev-parse --abbrev-ref HEAD)" \
+	BUILD_GIT_BRANCH="pinned" \
 	BUILD_GIT_DATE="$(shell git show -s --format=%cI HEAD)" \
+	BUILD_DATE="$(shell git show -s --format=%cI HEAD)" \
 	npm run build:app
 	mkdir -p ./$(DIST_DIR_UI)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_UI)
@@ -36,8 +37,9 @@ build-starter: clean-starter
 	cd $(VUE_APP_DIR) && \
 	BUILD_GIT_COMMIT="$(shell git rev-parse HEAD)" \
 	BUILD_GIT_COMMIT_SHORT="$(shell git rev-parse --short HEAD)" \
-	BUILD_GIT_BRANCH="$(shell git rev-parse --abbrev-ref HEAD)" \
+	BUILD_GIT_BRANCH="pinned" \
 	BUILD_GIT_DATE="$(shell git show -s --format=%cI HEAD)" \
+	BUILD_DATE="$(shell git show -s --format=%cI HEAD)" \
 	VITE_SHACLVUE_VARIANT=starter npm run build:app
 	mkdir -p ./$(DIST_DIR_STARTER)
 	mv $(VUE_APP_DIR)/dist/app/* ./$(DIST_DIR_STARTER)
