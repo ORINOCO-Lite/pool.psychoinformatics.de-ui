@@ -16,6 +16,7 @@ install:
 # Build shacl-vue using top-level Vite-config
 # Copy shacl-vue config to dist directory
 build-ui: clean-ui
+	rm -rf $(RUNTIME_PLUGIN_DIR)
 	cp -r $(PLUGIN_DIR) $(RUNTIME_PLUGIN_DIR)
 	cd $(VUE_APP_DIR) && \
 	BUILD_GIT_COMMIT="$(shell git rev-parse HEAD)" \
@@ -33,6 +34,7 @@ build-ui: clean-ui
 	cp -r templates $(DIST_DIR_UI)/
 
 build-starter: clean-starter
+	rm -rf $(RUNTIME_PLUGIN_DIR)
 	cp -r $(PLUGIN_DIR) $(RUNTIME_PLUGIN_DIR)
 	cd $(VUE_APP_DIR) && \
 	BUILD_GIT_COMMIT="$(shell git rev-parse HEAD)" \
