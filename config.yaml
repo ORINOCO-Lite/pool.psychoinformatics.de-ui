@@ -258,7 +258,7 @@ service_base_url:
     type: write
   - url: https://pool.psychoinformatics.de/api/public/
     type: read
-token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials.
+token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials, or log in / refresh token via the Psychoinformatics Hub.
 token_info_url: ''
 use_service: true
 use_token: true
