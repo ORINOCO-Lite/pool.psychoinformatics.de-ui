@@ -192,44 +192,45 @@ function removeAuthor(idx) {
 async function checkThenImportMetadata() {
     // First check if a publication with the doi is already in the pool
     // if so: instruct user to rather edit the existing record
-
+    // Clean DOI:
+    const doiTextStripped = doiText.value.replace('https://doi.org/', '')
     // First do a constrained fetch for all publication records referencing the doi
     const result = await fetchFromService(
         'get-paginated-records-constrained',
         XYZRI.XYZPublication.value,
         allPrefixes,
-        doiText.value
+        doiTextStripped
     );
     if (result.status === null) {
         console.error(result.error);
     }
     // Now we find a publication with said DOI, either in identifiers or as pid
-    let pub = await plugins['doi'].api.findPublicationWithDOI(doiText.value, rdfDS)
+    let pub = await plugins['doi'].api.findPublicationWithDOI(doiTextStripped, rdfDS)
     if (pub) {
         let title = 'Known DOI'
-        let message = `A publication record with the specified DOI (${doiText.value}) already exists in the knowledge base. Please edit the existing record rather than importing a new one.`
+        let message = `A publication record with the specified DOI (${doiTextStripped}) already exists in the knowledge base. Please edit the existing record rather than importing a new one.`
         loadError(title, message)
         return
     }
     // Otherwise we continue
-    importMetadata()
+    importMetadata(doiTextStripped)
 }
 
 // Validate file type and read it
-const importMetadata = async () => {
+const importMetadata = async (doiTextStripped) => {
     clearError()
     emit('init-form')
     try {
         let result = await plugins['doi'].api.importMetadata(
             {
-                doi: doiText.value,
+                doi: doiTextStripped,
                 rdfDS: rdfDS,
             }
         )
         modelVals.value['authors'] = result.authors;
         modelVals.value['title'] = result.title;
         modelVals.value['abstract'] = result.abstract;
-        modelVals.value['doi'] = doiText.value;
+        modelVals.value['doi'] = doiTextStripped;
         for (const a of modelVals.value['authors']) {
             if (a.pid) {
                  a.type = 'matched';
