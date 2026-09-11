@@ -4,7 +4,7 @@
 app_name: PsyInf Knowledge Pooling Tool
 app_name_starter: PsyInf Knowledge Kickstarter
 documentation_url: ''
-external_config_url: https://hub.psychoinformatics.de/orinoco/assets/raw/branch/main/shacl-vue/config_default_xyzri.yaml
+external_config_url: config_default_xyzri.yaml
 page_title: PsyInf Knowledge
 source_code_url: https://hub.psychoinformatics.de/www/pool.psychoinformatics.de-ui
 
@@ -23,11 +23,11 @@ content:
   DOIWizardTemplate:
     url: templates/DOIWizardTemplate.ttl
   DOIlogo:
-    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/DOI_logo_24.svg
+    url: DOI_logo_24.svg
   file-upload-template:
     url: templates/file-upload.ttl
   orcid-logo:
-    url: https://hub.psychoinformatics.de/datalink/assets/raw/branch/main/shacl-vue/orcid_logo_24.svg
+    url: orcid_logo_24.svg
 
 # --------------
 # Theme settings
@@ -254,9 +254,9 @@ wizard_editor_selection:
 # Service API integration
 # -----------------------
 service_base_url:
-  - url: https://pool.psychoinformatics.de/api/protected/
+  - url: http://127.0.0.1:8111/protected/
     type: write
-  - url: https://pool.psychoinformatics.de/api/public/
+  - url: http://127.0.0.1:8111/public/
     type: read
 token_info: Please contact Michael Hanke at m.hanke@fz-juelich.de for credentials, or log in / refresh token via the Psychoinformatics Hub.
 token_info_url: ''
@@ -277,21 +277,19 @@ service_fetch_before:
 # Special features
 # ----------------
 gitannex_p2phttp_config:
-  base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
-  annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
-  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
+  base_url: http://127.0.0.1:8122/git-annex
+  annex_uuid: 00000000-0000-0000-0000-000000000001
+  client_uuid: local-shacl-vue
 use_gitannex_p2phttp: true
 
 gitannex_p2phttp_config_wizard:
-  client_uuid: 2e7a7d75-f2ed-11f0-90a9-dc97ba1c2528
+  client_uuid: local-shacl-vue
   targets:
-    - name: Psychoinformatics Hub
-      base_url: https://hub.psychoinformatics.de/git-annex-p2phttp/git-annex
+    - name: Local git-annex
+      base_url: http://127.0.0.1:8122/git-annex
       repositories:
-        - name: Public uploads
-          annex_uuid: cedde37c-416a-41fd-87e0-4ac100df4bf7
-        - name: Private uploads
-          annex_uuid: f1a8ef1c-6d8a-40e3-970f-4634390d961f
+        - name: Local uploads
+          annex_uuid: 00000000-0000-0000-0000-000000000001
 
 oidc:
   - name: Psychoinformatics Hub
